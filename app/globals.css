@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fade-in Hero */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Rotazione anello principale */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Rotazione inversa per la V (più veloce per stabilizzarla) */
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+.spin-reverse {
+  animation: spin-reverse 6s linear infinite;
+}
+
+/* Secondo anello sottile */
+@keyframes spin-reverse-slow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 14s linear infinite;
+}
+
+/* Orbita */
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(2.8rem) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(2.8rem) rotate(-360deg); }
+}
+.animate-orbit {
+  animation: orbit 6s linear infinite;
+}
+
+/* Bagliore pulsante */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(80, 255, 180, 0.3),
+                0 0 16px rgba(150, 80, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(80, 255, 180, 0.6),
+                0 0 28px rgba(150, 80, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(80, 255, 180, 0.3),
+                0 0 16px rgba(150, 80, 255, 0.2);
+  }
+}
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Pulsazione della V (più leggera per stabilizzarla) */
+@keyframes pulseSoft {
+  0% { opacity: 1; }
+  50% { opacity: 0.92; }
+  100% { opacity: 1; }
+}
+.pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite;
+}
